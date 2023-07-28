@@ -1,5 +1,6 @@
 import { getPostBySlug } from '@/app/_lib/posts'
 import { format } from 'date-fns'
+import ReactMarkdown from 'react-markdown'
 
 type Params = {
   slug: string
@@ -17,6 +18,8 @@ const Post = ({ params }: Props) => {
         <article>
           <h1>{post.title}</h1>
           <time dateTime={post.date}>{format(new Date(post.date), 'LLLL	d, yyyy')}</time>
+          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <section>{post.content}</section>
         </article>
       </div>
     </main>
