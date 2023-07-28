@@ -7,16 +7,13 @@ export default function blog() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        {posts &&
-          posts.length > 0 &&
-          posts.map((post, i) => (
-            <>
-              <Link key={i} as={`/posts/${post.slug}`} href="/posts/[slug]">
-                {post.title}
-              </Link>
-              <br />
-            </>
-          ))}
+        {posts?.map((post, i) => (
+          <>
+            <Link key={i} as={`/posts/${post.slug}`} href="/posts/[slug]">
+              {post.title}
+            </Link>
+          </>
+        ))}
       </div>
     </main>
   )
