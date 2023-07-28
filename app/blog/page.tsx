@@ -9,7 +9,7 @@ export default function blog() {
       <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
         {posts?.map((post, i) => (
           <>
-            <Link key={i} as={`/posts/${post.slug}`} href="/posts/[slug]">
+            <Link key={i} as={`/blog/${post.slug}`} href="/posts/[slug]">
               {post.title}
             </Link>
           </>
